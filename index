@@ -1,0 +1,239 @@
+<!doctype html>
+
+<style>
+ex
+{
+	font-style:italic;
+}
+
+p
+{
+	text-align:center;
+}
+
+h1
+{
+	text-align:center;
+	margin-auto;
+}
+
+.com
+{
+	color:darkred;
+	text-align:center;
+}
+
+.contour
+{
+	margin-top:0px;
+	margin-left: 15%;
+	margin-right: 15%;
+	border: 2px solid black;
+	border-radius:50px;
+	border-bottom: none;
+	background-color: lightblue;
+}
+
+
+
+.interne
+{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+@keyframes Taiball
+{
+	0%{transform:rotate(0deg);}
+	50%{transform:rotate(180deg);}
+	100%{transform:rotate(360deg);}
+}
+
+body
+{
+position:relative;
+background-image:url('font.jpg');
+background-size:cover;
+background-attachment:fixed;
+background-repeat:no-repeat;
+background-position: 0px 25%;
+}
+
+a:link
+{
+text-decoration:none;
+color:black;
+font-size:18px;
+}
+
+a:visited
+{
+background-color:grey;
+color:green;
+font-size:14px;
+}
+
+footer
+{
+	width: 100%;
+	height: 1cm;
+	border:2px solid black;
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	background-color:rgb(255,63.5,127);
+}
+
+.TaiChi
+{
+	position:fixed;
+	animation: Taiball 0.001s linear infinite;
+}
+
+.divfooter
+{
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+p.perso
+{
+	text-align:center;
+	margin:auto;
+}
+
+header
+{
+	border: 2px solid black;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	background-color:rgb(127,63.5,255);
+	height:1.8cm;
+}
+
+</style>
+
+<html>
+	<head>
+		<meta-charset="utf-8"/>
+		<!-- <meta http-equiv="refresh" content="1" /> -->
+		<meta http-equiv="refresh" content="60" />
+		<title>Taï Chi</title>
+	</head>
+<body>
+<header>
+<script type="text/javascript"> 
+		d = new Date();
+		var min = d.getMinutes();
+		if(min< 10)
+			min = "0" + min;
+			
+		var hour = d.getHours();
+		if(hour< 10)
+			hour = "0" + hour;
+		var sec = d.getSeconds();
+		if(sec<10)
+			sec = "0" + sec;
+		
+		document.write("<p><span style='color:red;margin: 0cm 1cm;float:left;'>"); 
+		document.write("Aujourd'hui nous sommes le : "+'<br>'+d.toLocaleDateString()+', '+hour+":" +min+":"+sec); 
+		document.write("</span></p>"); 
+		</script>
+		<br>
+</header>
+
+<br><br><br><br>
+<img src="Tai Chi.png" height="150px" class="TaiChi"/>
+
+<div class="contour">
+	<div class="interne">
+	<h1>Le Tai Chi </h1>
+	<p>
+	Dans la philosophie chinoise et taoïste, le Qi est le souffle originel, primordial. <br>
+	Il est le créateur et l'animateur de toute chose existante. <br>
+	Il est l’origine de l’harmonie du monde selon les Chinois et 
+	l’harmonie du monde est maintenue grâce au Yin et au Yang, <br>ces deux forces complémentaires en interaction permanente.
+	</p>
+		
+	<p2>
+	Symbole en deux parties différentes bien sûr, mais pas si opposées que complémentaires, 
+	et donc associées dans un cercle qui symbolise l'équilibre universel. <br>
+	Le Yin et le Yang sont deux parties d’un seul tout, chacune renfermant une partie de l’autre comme le signalent les points baioli: 
+	il y a un point noir dans le blanc, et un point blanc dans le noir. <br><br>
+	<ex>Ils nous rappellent que rien n’est jamais tout noir ou tout blanc: dans chaque Yin il y a du Yang, et dans chaque Yang il y a du Yin.<br>
+	Comme l’ombre et la lumière, le sec et l’humide, le froid et le chaud, chaque homme à une part de féminin et chaque femme une part de masculin… 
+	Comme en astrologie ou les signes opposés se complètent.
+	Chaque chose a besoin de son contraire et ne pourrait exister sans lui.
+	</ex><br><br>
+
+	<p class=com>
+	Les points de couleurs opposées, appelés biaoli dans la médecine chinoise, rappellent que ces deux concepts sont liés, se succèdent mutuellement 
+	et que l'un existe grâce à l'autre.<br>
+	Le biaoli suffit à caractériser la pensée confucianiste, et son avantage spécifique (l'amitié) par rapport au dualisme,<br> auquel on réduit trop 
+	souvent la culture occidentale, et ses approches chrétienne ou cartésienne.
+	</p>
+	</p2>
+
+	<h1>Yin et Yang</h1>
+	<fieldset>
+		<legend><h2>Yin</h2></legend>
+
+	Étymologiquement, le caractère du Yin signifie « Ombre ».<br>
+	Le Yin symbolise l'obscurité et tout ce qui est voilé. <br>
+	<br>
+	<ex>Le Yin représente le féminin, le noir, la nuit, la lune, la gauche, le pair, le vide, le froid, l’intériorité, la gentillesse, la négativité,
+	la passivité, les ténèbres, les rivières etc.</ex>
+	<br><br>
+	 Le caractère Yīn (阴) est associé à la Lune et la glace (月) qui représentent la part féminine de la nature.
+	
+	<li><h3>La personnalité Yin</h3></li>
+	<p class="perso">
+	Les êtres Yin sont des personnes réservées, timides, introverties et calmes. <br>En général, elles n’aiment pas attirer l‘attention,
+	n’ont pas d’attrait pour le changement, <br>les fêtes, les animations ou les foules,  et préfèrent la vie de famille.
+	</p>
+	
+	</fieldset>
+	<fieldset>
+	<legend><h2>Yang</h2></legend>
+	Étymologiquement, le caractère du Yang signifie « Lumière ».<br>
+	<ex>Le Yang représente le masculin, la lumière, le jour, le soleil, la droite, l'impair, le plein, la chaleur, l’extériorité, la fermeté, la positivité, la lumière, les montagnes etc.
+	... </ex>
+	<br><br>Le caractère Yáng (阳) est associé au Soleil et au feu (日) qui représente la part masculine de la nature.
+	
+	<li><h3>La personnalité Yang</h3></li>
+	<p class="perso">
+	Les êtres Yang sont plus ouverts, nerveux extravertis, aiment se mettre en avant. <br>Parmi les caractéristiques de la personnalité Yang,
+	on trouve <br>l'amour de l'aventure et des défis mais aussi l’horreur de la routine. <br>Le foyer est considéré comme le repos du guerrier.
+	</p>
+	
+	</fieldset>
+	<fieldset>
+	<legend><h2>Le cercle</h2></legend>
+	<p class="perso">
+	Le cercle extérieur nous montre de quelle façon toute la création est englobée dans cette dualité Yin Yang <br>qui maintient l’harmonie et 
+	l’équilibre au sein de l’univers.
+	<br>Les formes en noir et blanc dans le cercle représentent l’interaction des deux énergies opposées:<br>
+	« Yin » (noir) et « Yang » (blanc).<br><br>
+	<img src="Tai Chi.png" height="100px" style="transform:rotate(270deg);"/><br><br>
+	Combinées, ces forces sont à l’origine de tout ce qui se produit dans notre monde.<br>
+	Les formes en « S » des sections noires et blanches imbriquées l’une dans l’autre <br>
+	symbolisent elles-mêmes le mouvement continuel de ces deux énergies. <br>
+	Les deux parties se partagent mutuellement l’espace, se complétant dans un cycle sans fin.<br><br>
+	<img src="Taijitu.png" height="100px"/>
+	<p>
+	</fieldset>
+	</div>
+<br>
+	</div>
+	<br>
+	<footer>
+	<div style="float:left;" class="divfooter"><a href="http://triskele.eklablog.com/yin-et-yang-a108541474" target="_blanc">Sources</a></div>
+	<div class="divfooter"><u>Le Taï Chi</u></div>
+	
+	</footer>
+	
+	</body>
+	</html>
