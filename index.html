@@ -1,6 +1,7 @@
 <!doctype html>
 
 <style>
+
 ex
 {
 	font-style:italic;
@@ -26,11 +27,13 @@ h1
 .contour
 {
 	margin-top:0px;
-	margin-left: 15%;
-	margin-right: 15%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 20px;
 	border: 2px solid black;
 	border-radius:50px;
-	border-bottom: none;
+	border-bottom: 10px solid black;
+	border-top: 10px solid black;
 	background-color: lightblue;
 }
 
@@ -120,10 +123,20 @@ header
 	<head>
 		<meta-charset="utf-8"/>
 		<!-- <meta http-equiv="refresh" content="1" /> -->
-		<meta http-equiv="refresh" content="60" />
+		<meta http-equiv="refresh" content="431" />
 		<title>Taï Chi</title>
 	</head>
 <body>
+<audio id="sound" src="Music.MP3" autoplay></audio>
+
+<script type="text/javascript">
+	function getSon(nombre)
+	{
+		var audio=document.getElementById('sound');
+		audio.volume=nombre;
+	}
+	
+</script>
 <header>
 <script type="text/javascript"> 
 		d = new Date();
@@ -143,15 +156,202 @@ header
 		document.write("</span></p>"); 
 		</script>
 		<br>
+			
 </header>
 
 <br><br><br><br>
 <img src="Tai Chi.png" height="150px" class="TaiChi"/>
+<div style="position:fixed;margin-top:175px;background-color:rgba(255,127,0,0.3);">
+	<div class="VOLUMA" style="margin-top:5px;float:left;">Volume :</div> 
+	<style>
+		VOLUMA:hover
+		{
+		
+		}
+	</style>
+	<input type="range" class="xD" style="border: 2px solid black;margin-top:5px;background-color:black;" id="vol" min=0 max=1 step=0.1 value=0.5 onclick=SONOR()>
+	<script>
+		//document.write("<p>"+document.getElementById('vol').value*100+"%"+"</p>");
+		$(function() 
+		{
+			$('.xD').next().text('--'); // Valeur par défaut
+			$('.xD').on('input', function() 
+			{
+				var $set = $(this).val();
+				$(this).next().text($set);
+			});
+		});
+	</script>
+	<script>
+		function SONOR()
+		{
+			var V=document.getElementById('vol').value;
+			getSon(V);
+		}
+	</script>
+	<div id="Percent">
+		<div class="Percent">
+		<script>
+			for(var a=0;a<=100;a=a+20)
+			{
+				document.write("<small>"+a+"% "+"</small>");
+			}
+		</script>
+		</div>
+		<br>
+		<div class="Percent2">
+		<script>
+			for(var a=10;a<100;a=a+20)
+			{
+				document.write("<small>"+a+"% "+"</small>");
+			}
+		</script>
+		</div>
+		<style>
+			small
+			{
+				position:relative;
+				font-size:6px;
+				margin-right:16px;
+			}
+			.Percent
+			{
+				margin-left:2cm;
+				margin-top:-0.5em;
+			}
+			.Percent2
+			{
+				margin-left:2.25cm;
+				margin-top:-2em;
+			}
+		</style>
+	</div>
+
+	</input>
+</div>
+
+<div style="float:right;position:fixed;left:80.5%;">
+	<script>
+		function setStyle(id,style,value)
+		{
+			id.style[style] = value;
+		}
+		function opacite(el,opacity)
+		{
+			setStyle(el,"filter:","alpha(opacity="+opacity+")");
+			setStyle(el,"-moz-opacity",opacity/100);
+			setStyle(el,"-khtml-opacity",opacity/100);
+			setStyle(el,"opacity",opacity/100);
+		}
+		function calendrier()
+		{
+			var date = new Date();
+			var jour = date.getDate();
+			var moi = date.getMonth();
+			var annee = date.getYear();
+			if(annee<=200)
+			{
+				annee += 1900;
+			}
+			mois = new Array('Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
+			jours_dans_moi = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+			if(annee%4 == 0 && annee!=1900)
+			{
+				jours_dans_moi[1]=29;
+			}
+			total = jours_dans_moi[moi];
+			var date_aujourdui = jour+' '+mois[moi]+' '+annee;
+			dep_j = date;
+			dep_j.setDate(1);
+			if(dep_j.getDate()==2)
+			{
+				dep_j=setDate(0);
+			}
+			dep_j = dep_j.getDay();
+			document.write('<table class="cal_calendrier" onload="opacite(document.getElementById(\'cal_body\'),20);"><tbody id="cal_body"><tr><th colspan="7">'+date_aujourdui+'</th></tr>');
+			document.write('<tr class="cal_j_semaines"><th>Dim</th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th></tr><tr>');
+			sem = 0;
+			for(i=1;i<=dep_j;i++)
+			{
+				document.write('<td class="cal_jours_av_ap">'+(jours_dans_moi[moi-1]-dep_j+i)+'</td>');
+				sem++;
+			}
+			for(i=1;i<=total;i++)
+			{
+				if(sem==0)
+				{
+					document.write('<tr>');
+				}
+				if(jour==i)
+				{
+					document.write('<td class="cal_aujourdhui">'+i+'</td>');
+				}
+				else
+				{
+					document.write('<td>'+i+'</td>');
+				}
+				sem++;
+				if(sem==7)
+				{
+					document.write('</tr>');
+					sem=0;
+				}
+			}
+			for(i=1;sem!=0;i++)
+			{
+				document.write('<td class="cal_jours_av_ap">'+i+'</td>');
+				sem++;
+				if(sem==7)
+				{
+					document.write('</tr>');
+					sem=0;
+				}
+			}
+			document.write('</tbody></table>');
+			opacite(document.getElementById('cal_body'),70);
+			return true;
+		}
+	</script>
+<style>
+	.cal_calendrier
+{
+    border:1px solid black;
+    padding:1px;
+    background-color:#4594ff;
+    width:250px;
+    margin:auto;
+    height:200px;
+    background-image:url('http://www.supportduweb.com/ftp/ybouane/scripts_astuces/javascript/calendrier/fond-250-200.gif');
+}
+.cal_calendrier th
+{
+    border:1px solid black;
+    background-color:#ffffff;
+}
+.cal_calendrier td
+{
+    border:1px solid black;
+    background-color:#ffffff;
+    text-align:center;
+}
+.cal_aujourdhui
+{
+    color:#ff0000;
+}
+.cal_jours_av_ap
+{
+    color:#5a779e;
+}
+</style>
+<script type="text/javascript">
+		calendrier();
+	</script>
+</div>
 
 <div class="contour">
 	<div class="interne">
 	<h1>Le Tai Chi </h1>
-	<p>
+	<p style="font-family:Brush Script MT, Brush Script Std, cursive;font-size:18px;">
 	Dans la philosophie chinoise et taoïste, le Qi est le souffle originel, primordial. <br>
 	Il est le créateur et l'animateur de toute chose existante. <br>
 	Il est l’origine de l’harmonie du monde selon les Chinois et 
@@ -169,11 +369,11 @@ header
 	Chaque chose a besoin de son contraire et ne pourrait exister sans lui.
 	</ex><br><br>
 
-	<p class=com>
-	Les points de couleurs opposées, appelés biaoli dans la médecine chinoise, rappellent que ces deux concepts sont liés, se succèdent mutuellement 
+	<p class=com style="font-family:Bradley Hand, cursive">
+	Les points de couleurs opposées,<br>  appelés biaoli dans la médecine chinoise,<br>  rappellent que ces deux concepts sont liés,<br>  se succèdent mutuellement 
 	et que l'un existe grâce à l'autre.<br>
-	Le biaoli suffit à caractériser la pensée confucianiste, et son avantage spécifique (l'amitié) par rapport au dualisme,<br> auquel on réduit trop 
-	souvent la culture occidentale, et ses approches chrétienne ou cartésienne.
+	Le biaoli suffit à caractériser la pensée confucianiste,<br>  et son avantage spécifique (l'amitié) par rapport au dualisme,<br> auquel on réduit trop 
+	souvent la culture occidentale,<br>  et ses approches chrétienne ou cartésienne.
 	</p>
 	</p2>
 
